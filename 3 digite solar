@@ -1,0 +1,138 @@
+#define solar A3
+
+int thresold = 0;
+void setup() {
+ Serial.begin(9600);
+  pinMode(A3,INPUT);
+  thresold = analogRead(solar);
+}
+
+void loop() {
+  int main = analogRead(solar);
+  
+  int bits[9];
+  
+  
+    
+    if(300<main){
+      
+    delay(500);//first bit
+    
+    if(3<main){
+      
+    for(int ram=0;ram<5;ram++){
+
+        
+      
+    for(int z  = 0 ;z<9;z++){
+      
+     if(250+thresold<analogRead(solar)){
+      bits[z] = 1;
+      delay(1000);
+    }
+    else
+    {
+      bits[z] = 0;
+      delay(1000);
+    }
+    }
+    
+    String con = "";
+    for(int papi=1;papi<9;papi++){
+      con = con + bits[papi];
+    }
+    Serial.println(con);
+    
+    if(con=="11000010" || con=="10000100" ){
+      Serial.print("a");
+    }
+    else if(con=="01100010" || con=="11000100"){
+      Serial.print("b");
+    }
+    else if(con=="01100011" || con=="11000110"){
+      Serial.print("c");
+    }
+    else if(con=="01100100" || con=="11001000"){
+      Serial.print("d");
+    }
+    else if(con=="01100101" ||  con=="11001010"){
+      Serial.print("e");
+    }
+    else if(con=="01100110" ||  con=="11001100" ){
+      Serial.print("f");
+    }
+    else if(con=="01100111" || con=="11001110" ){
+      Serial.print("g");
+    }
+    else if(con=="01101000" ||  con=="11010000" ){
+      Serial.print("h");
+    }
+    else if(con=="01101001" ||  con=="11010010" ){
+      Serial.print("i");
+    }
+    else if(con=="01101010" ||  con=="11010100" ){
+      Serial.print("j");
+    }
+    else if(con=="01101011" ||  con=="11010110" ){
+      Serial.print("k");
+    }
+    else if(con=="01101100" ||  con=="11011000" ){
+      Serial.print("l");
+    }
+    else if(con=="01101101" ||  con=="11011010" ){
+      Serial.print("m");
+    }
+    else if(con=="01101110" ||  con=="11011100" ){
+      Serial.print("n");
+    }
+    else if(con=="01101111" ||  con=="11011110"){
+      Serial.print("o");
+    }
+    else if(con=="01110000" ||  con=="11100000" ){
+      Serial.print("p");
+    }
+    else if(con=="01110001"  ||  con=="11100010" ){
+      Serial.print("q");
+    }
+    else if(con=="01110010" ||  con=="11100100"){
+      Serial.print("r");
+    }
+    else if(con=="01110011" ||  con=="11100110" ){
+      Serial.print("s");
+    }
+    else if(con=="01110100" ||  con=="11101000" ){
+      Serial.print("t");
+    }
+    else if(con=="01110101" ||  con=="11101010" ){
+      Serial.print("u");
+    }
+    else if(con=="01110110" ||  con=="11101100" ){
+      Serial.print("v");
+    }
+    else if(con=="01110111" ||  con=="11101110" ){
+      Serial.print("w");
+    }
+    else if(con=="01111000" || con=="11110000"){
+      Serial.print("x");
+    }
+    else if(con=="01111001" || con=="11110010"){
+      Serial.print("y");
+    }
+    else if(con=="01111010" || con=="11110100"){
+      Serial.print("z");
+    }
+    else if(con=="11111110"){
+      Serial.print(" ");
+    }
+    else if(con=="00000000" || con=="11111111"){
+      Serial.print(" ");
+    }
+
+    delay(300);
+   }
+    
+   //end of first character
+   
+}
+}
+}
